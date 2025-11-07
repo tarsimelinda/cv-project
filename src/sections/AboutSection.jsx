@@ -46,6 +46,26 @@ export default function AboutSection() {
                 </div>
             </div>
 
+            {/* Mobil fallback lista */}
+            <ul className="timeline-mobile" aria-label="Experience">
+                <li className="timeline-card">
+                    <p className="title">Codecool</p>
+                    <p className="subtitle">Full Stack Developer, 2024 – 2025</p>
+                </li>
+
+                {workExperience.map((job, i) => (
+                    <li className="timeline-card" key={`mjob-${i}`}>
+                        <p className="title">{job.company}</p>
+                        <p className="subtitle">{job.role}, {job.years}</p>
+                    </li>
+                ))}
+
+                <li className="timeline-card">
+                    <p className="title">BKSZC Erzsébet Királyné Szépészeti Technikum</p>
+                    <p className="subtitle">High School Diploma, 2016 – 2020</p>
+                </li>
+            </ul>
+
             <p className="about-description mt">
                 I am a quick learner, detail-oriented, and passionate about writing clean,
                 maintainable code. I enjoy tackling challenges and continuously improving
