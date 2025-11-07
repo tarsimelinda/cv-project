@@ -7,18 +7,58 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Build output
+dist/
+dist-ssr/
+build/
+out/
+
+# Local environment files
+.env
+.env.local
+.env.*.local
 *.local
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# OS-specific files
+Thumbs.db
+ehthumbs.db
+Icon?
+desktop.ini
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional cache directories
+.cache/
+.next/
+.nuxt/
+out/
+coverage/
+.tmp/
+temp/
+
+# Lock files (optional, if you want to ignore them)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

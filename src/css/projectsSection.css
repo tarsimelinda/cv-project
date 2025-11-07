@@ -1,0 +1,42 @@
+.projects-section {
+    min-height: 100vh;
+    padding: 4rem 1rem;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+.projects-grid {
+    max-width: 80rem;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.project-card {
+    background-color: #111827;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.project-description {
+    color: #d1d5db;
+    margin-bottom: 1rem;
+}
+

@@ -1,0 +1,24 @@
+.contact-section {
+    color: #d1fae5;
+}
+
+
+.contact-section h2 {
+    color: #d1fae5;
+
+    text-shadow: 0 0 20px rgba(52, 211, 153, 0.2);
+}
+
+
+.contact-section p {
+    color: #a7f3d0;
+}
+
+.contact-section label {
+    color: #d1fae5;
+}
+
+.input-field::placeholder {
+    color: #6ee7b7;
+    opacity: 0.7;
+}
