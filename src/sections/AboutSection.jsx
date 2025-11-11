@@ -2,7 +2,7 @@ import React from "react";
 import "../css/aboutSection.css";
 
 const workExperience = [
-    { company: "MBH Bank", role: "Advisor", years: "2023 – 2024" },
+    { company: "MBH Bank", role: "Bank Teller", years: "2023 – 2024" },
     { company: "Mediaworks", role: "Receptionist", years: "2021 – 2024" },
     { company: "Juhász Szalon", role: "Hairdresser", years: "2020 – 2021" },
 ];
