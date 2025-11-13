@@ -1,16 +1,100 @@
-# React + Vite
+# Melinda Társi – Portfolio Website  
+A modern, responsive developer portfolio built with React, Vite, Tailwind CSS, and Aceternity UI components.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project serves as my personal portfolio and CV website. It showcases my skills, projects, experience, and provides ways to get in touch with me.  
+The goal was to create a clean, elegant, performant website that reflects my style and technical skillset as a full-stack developer.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## React Compiler
+**Frontend:**
+-  React (Vite)
+-  Tailwind CSS
+-  Aceternity UI Components
+-  Headless UI
+-  Modular CSS (section-based)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Developer tools:**
+-  npm
+-  jsconfig with path aliases
+-  Vite dev server
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Running the Project Locally
+
+Make sure Node.js and npm are installed.
+
+### 1. Clone the repository
+```sh
+git clone https://github.com/tarsimelinda/cv-project.git
+```
+
+### 2. Install dependencies
+
+```sh
+npm install
+```
+
+### 3. Set up environment variables
+
+Create a `.env` file in the project root by copying from the example:
+
+```sh
+cp .env.example .env
+```
+
+Then fill in your EmailJS credentials:
+- `VITE_EMAILJS_SERVICE_ID` – Get from [EmailJS](https://www.emailjs.com/)
+- `VITE_EMAILJS_TEMPLATE_ID` – Get from [EmailJS](https://www.emailjs.com/)
+- `VITE_EMAILJS_PUBLIC_KEY` – Get from [EmailJS](https://www.emailjs.com/)
+
+**Important:** Never commit the `.env` file. Sensitive credentials should never be exposed in version control. The `.gitignore` already excludes `.env` files.
+
+### 4. Start development server
+
+```sh
+npm run dev
+```
+
+The website will be available at:
+  http://localhost:5173
+
+### Features
+
+* Fully responsive design for all screen sizes
+
+* Sticky navigation with active section highlighting
+
+* Smooth scrolling and subtle animations
+
+* Timeline-based “About Me” section
+
+* Interactive skill icons with external links
+
+* Projects displayed as clean cards with GitHub links
+
+* Contact form with basic validation
+
+* Contact section with direct links (GitHub, LinkedIn, Email)
+
+### UI Libraries Used
+* Tailwind CSS
+
+* Used for styling and consistent, utility-first layout.
+
+* Aceternity UI
+
+* Modern, animated, aesthetically pleasing components for hero and CTA sections.
+
+* Headless UI
+
+* Used for the mobile navigation (Disclosure component).
+
+
+### Contact
+
+* LinkedIn: https://www.linkedin.com/in/melinda-t%C3%A1rsi-198782390/
+* GitHub: https://github.com/tarsimelinda
+* Email: melindatarsi9@gmail.com

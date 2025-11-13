@@ -4,9 +4,17 @@ import React from "react";
 
 export default function ProjectCard({ title, description, link }) {
     const [hovered, setHovered] = React.useState(false);
+    const cardRef = React.useRef(null);
+
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            window.open(link, "_blank");
+        }
+    };
 
     return (
         <div
+            ref={cardRef}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             className="relative border border-black/[0.2] dark:border-white/[0.2] overflow-hidden rounded-xl p-6 h-[18rem] flex flex-col justify-between items-start bg-emerald-900 dark:bg-emerald-900 group transition-colors duration-300"
@@ -46,7 +54,9 @@ export default function ProjectCard({ title, description, link }) {
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative z-10 mt-4 inline-block text-sm font-medium text-emerald-600 dark:text-emerald-400 group-hover:text-white transition"
+                onKeyDown={handleKeyDown}
+                className="relative z-10 mt-4 inline-block text-sm font-medium text-emerald-600 dark:text-emerald-400 group-hover:text-white transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-400 rounded px-2 py-1"
+                aria-label={`View ${title} project on GitHub (opens in new tab)`}
             >
                 View on GitHub →
             </a>

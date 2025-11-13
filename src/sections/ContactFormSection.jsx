@@ -6,6 +6,12 @@ const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+function getErrorMessage(err) {
+    if (!err) return "Email send failed.";
+    if (typeof err === "string") return err;
+    return err?.text || err?.message || String(err) || "Email send failed.";
+}
+
 export default function ContactFormSection() {
     const formRef = useRef(null);
     const [status, setStatus] = useState({ sending: false, ok: null, error: "" });
@@ -23,6 +29,7 @@ export default function ContactFormSection() {
 
         if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
             setStatus({ sending: false, ok: false, error: "Missing env vars." });
+            console.error("EmailJS configuration missing. Please add VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, and VITE_EMAILJS_PUBLIC_KEY to your .env file.");
             return;
         }
 
@@ -31,7 +38,9 @@ export default function ContactFormSection() {
             setStatus({ sending: false, ok: true, error: "" });
             formRef.current.reset();
         } catch (err) {
-            setStatus({ sending: false, ok: false, error: err?.text || err?.message || "Email send failed." });
+            const errorMessage = getErrorMessage(err);
+            console.error("EmailJS send error:", err);
+            setStatus({ sending: false, ok: false, error: errorMessage });
         }
     }
 

@@ -46,7 +46,6 @@ export default function AboutSection() {
                 </div>
             </div>
 
-            {/* Mobil fallback lista */}
             <ul className="timeline-mobile" aria-label="Experience">
                 <li className="timeline-card">
                     <p className="title">Codecool</p>
