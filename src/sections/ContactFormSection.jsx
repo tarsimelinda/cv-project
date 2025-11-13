@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
@@ -15,6 +15,14 @@ function getErrorMessage(err) {
 export default function ContactFormSection() {
     const formRef = useRef(null);
     const [status, setStatus] = useState({ sending: false, ok: null, error: "" });
+
+    useEffect(() => {
+        if (PUBLIC_KEY) {
+            emailjs.init({
+                publicKey: PUBLIC_KEY,
+            });
+        }
+    }, []);
 
     async function handleSubmit(e) {
         e.preventDefault();
